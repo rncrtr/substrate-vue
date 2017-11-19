@@ -8,6 +8,7 @@ import VueRouter from 'vue-router'
 import Hello from './components/Hello'
 import About from './components/About'
 import Login from './components/Login'
+import Register from './components/Register'
 
 require('./assets/sass/main.scss');
 
@@ -19,6 +20,7 @@ const routes = [
 	{ path: '/', component: Hello },
 	{ path: '/about', component: About },
 	{ path: '/login', component: Login },
+  { path: '/register', component: Register },
 ]
 
 const router = new VueRouter({

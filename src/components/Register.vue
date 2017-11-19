@@ -3,7 +3,7 @@
 		<div class="columns">
 			<div class="column">&nbsp;</div>
 			<div class="column">
-				<h2 class="title">Login</h2>
+				<h2 class="title">Register</h2>
 				<div class="field">
 				  <p class="control has-icons-left has-icons-right">
 				    <input class="input" type="email" name="email" placeholder="Email" v-model="email" :class="{'input': true, 'is-danger': errors.has('email') }" v-validate="'required|email'">
@@ -19,6 +19,15 @@
 				<div class="field">
 				  <p class="control has-icons-left">
 				    <input class="input" type="password" name="password" placeholder="Password" v-model="password" v-validate="'required'" v-on:keyup.enter="validateBeforeSubmit">
+				    <span v-show="errors.has('password')" class="help is-danger"><i class="fa fa-warning"></i>&nbsp;{{ errors.first('password') }}</span>
+				    <span class="icon is-small is-left">
+				      <i class="fa fa-lock"></i>
+				    </span>
+				  </p>
+				</div>
+				<div class="field">
+				  <p class="control has-icons-left">
+				    <input class="input" type="password" name="confirm" placeholder="Confirm Password" v-model="password" v-validate="'required'" v-on:keyup.enter="validateBeforeSubmit">
 				    <span v-show="errors.has('password')" class="help is-danger"><i class="fa fa-warning"></i>&nbsp;{{ errors.first('password') }}</span>
 				    <span class="icon is-small is-left">
 				      <i class="fa fa-lock"></i>
